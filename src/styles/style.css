@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+.typing-cursor {
+  display: inline-block;
+  margin-left: 3px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../fonts/Vazirmatn/Vazirmatn-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  font-family: "Vazirmatn", sans-serif;
+}
