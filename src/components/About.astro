@@ -1,0 +1,52 @@
+---
+import "../styles/style.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="bg-[#181C23] py-16">
+      <section
+        dir="rtl"
+        class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-12 px-6"
+      >
+        <!-- Text Section -->
+        <div
+          class="flex-1 bg-gradient-to-br from-[#1F242C] to-[#23262F] p-8 rounded-2xl shadow-lg border border-[#FF6A3D]/30 hover:shadow-[#FF6A3D]/30 transition duration-500"
+        >
+          <h2 class="text-4xl font-black text-[#FF6A3D] mb-4 relative">
+            درباره من
+            <span
+              class="absolute bottom-0 left-0 w-20 h-1 bg-[#FF6A3D] rounded-full"
+            ></span>
+          </h2>
+          <p class="mt-6 text-gray-300 leading-8 text-lg">
+            از 16 سالگی وارد کلاس های فنی و حرفه ای شدم. اولین بار بود که با کد آشنا شدم، نه به خاطر نمره یا مدرک، بلکه به خاطر اینکه می‌خواستم بفهمم پشت این همه اپلیکیشن‌های اعتیادآور چه خبره.<br>
+            از 19 سالگی فهمیدم که وب فقط یه شبکه‌ی ساده نیست. یک فضای بزرگه؛ پر از داده، پر از اطلاعات. من واردش شدم چون نمی‌خواستم یکی از تماشاگرها باشم. می‌خواستم دستم روی سیم‌های برق پشت پرده باشه.<br>
+            هنوز هم دارم یاد می‌گیرم. چون توی این بازی هیچ‌وقت آخرین لِوِل وجود نداره. دنبال تجربه‌هام، دنبال آدمایی که مثل من فکر کنن، دنبال همکاری‌هایی که به جای پول، ارزش واقعی تولید کنن.<br>
+            پول؟ آره، لازمه. ولی چیزی که دنبالش می‌گردم بزرگ‌تره: آزادی از سیستمی که همه‌مون رو توی یک حلقه‌ی بی‌پایان مصرف و تولید زندانی کرده.<br>
+            من شاید یک برنامه نویس حرفه ای نباشم ولی یک تماشاگر ساده هم نیستم. همین.
+          </p>
+        </div>
+
+        <!-- Profile Image -->
+        <div class="relative flex justify-center items-center group">
+          <div
+            class="absolute -inset-4 rounded-full bg-gradient-to-tr from-[#FF6A3D] to-[#FF9E3D] opacity-30 blur-2xl group-hover:opacity-60 transition duration-500"
+          >
+          </div>
+          <img
+            src="/src/images/profile.jpg"
+            alt="profile"
+            class="relative w-64 h-64 rounded-full object-cover border-4 border-[#23262F] shadow-lg group-hover:scale-105 transition duration-500"
+          />
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
