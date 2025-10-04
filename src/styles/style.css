@@ -21,3 +21,49 @@
 body {
   font-family: "Vazirmatn", sans-serif;
 }
+
+.swiper-pagination-bullet {
+  background-color: #ff6a3d !important; /* نارنجی */
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ff6a3d !important; /* همون نارنجی پررنگ */
+  opacity: 1;
+  width: 14px;
+  height: 14px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ff6a3d !important;   /* رنگ نارنجی */
+  transition: all 0.3s ease;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4); /* پس‌زمینه نیمه شفاف */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #ff6a3d;
+  color: #fff !important; /* ایکون سفید */
+  transform: scale(1.1);  /* کمی بزرگ‌تر بشه */
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+@media (max-width: 639px) {
+  .custom-swiper-btn {
+    display: none !important;
+  }
+}
