@@ -52,8 +52,8 @@ body {
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
   background-color: #ff6a3d;
-  color: #fff !important; /* ایکون سفید */
-  transform: scale(1.1);  /* کمی بزرگ‌تر بشه */
+  color: #fff !important;
+  transform: scale(1.1);
 }
 
 .swiper-button-next::after,
