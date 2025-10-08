@@ -1,0 +1,45 @@
+---
+import "../styles/style.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <footer
+      class="bg-[#0F131A] py-10 flex flex-col justify-center items-center text-white text-sm border-t-2 border-t-[#FF6A3D] relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[2px] bg-gradient-to-r from-transparent via-[#FF6A3D] to-transparent opacity-60"
+      >
+      </div>
+
+      <p
+        class="headline opacity-70 tracking-wide text-center select-none hover:opacity-100 transition-opacity duration-300"
+      >
+        © 2025 All rights reserved
+      </p>
+
+      <div
+        class="mt-4 w-24 h-[2px] bg-gradient-to-r from-[#FF6A3D] to-[#FF945A] rounded-full"
+      >
+      </div>
+    </footer>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        ScrollReveal().reveal(".headline", {
+          duration: 1000,
+          origin: "bottom",
+          distance: "20px",
+          easing: "ease-in-out",
+          reset: false,
+        });
+      });
+    </script>
+  </body>
+</html>

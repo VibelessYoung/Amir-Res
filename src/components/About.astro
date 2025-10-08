@@ -17,7 +17,7 @@ import "../styles/style.css";
       >
         <!-- Text Section -->
         <div
-          class="flex-1 bg-gradient-to-br from-[#1F242C] to-[#23262F] p-8 rounded-2xl shadow-lg border border-[#FF6A3D]/30 hover:shadow-[#FF6A3D]/30 transition duration-500"
+          class="text flex-1 bg-gradient-to-br from-[#1F242C] to-[#23262F] p-8 rounded-2xl shadow-lg border border-[#FF6A3D]/30 hover:shadow-[#FF6A3D]/30 transition duration-500"
         >
           <h2 class="text-4xl font-black text-[#FF6A3D] mb-4 relative">
             درباره من
@@ -26,16 +26,23 @@ import "../styles/style.css";
             ></span>
           </h2>
           <p class="mt-6 text-gray-300 leading-8 text-lg">
-            از 16 سالگی وارد کلاس های فنی و حرفه ای شدم. اولین بار بود که با کد آشنا شدم، نه به خاطر نمره یا مدرک، بلکه به خاطر اینکه می‌خواستم بفهمم پشت این همه اپلیکیشن‌های اعتیادآور چه خبره.<br>
-            از 19 سالگی فهمیدم که وب فقط یه شبکه‌ی ساده نیست. یک فضای بزرگه؛ پر از داده، پر از اطلاعات. من واردش شدم چون نمی‌خواستم یکی از تماشاگرها باشم. می‌خواستم دستم روی سیم‌های برق پشت پرده باشه.<br>
-            هنوز هم دارم یاد می‌گیرم. چون توی این بازی هیچ‌وقت آخرین لِوِل وجود نداره. دنبال تجربه‌هام، دنبال آدمایی که مثل من فکر کنن، دنبال همکاری‌هایی که به جای پول، ارزش واقعی تولید کنن.<br>
-            پول؟ آره، لازمه. ولی چیزی که دنبالش می‌گردم بزرگ‌تره: آزادی از سیستمی که همه‌مون رو توی یک حلقه‌ی بی‌پایان مصرف و تولید زندانی کرده.<br>
+            از 16 سالگی وارد کلاس های فنی و حرفه ای شدم. اولین بار بود که با کد
+            آشنا شدم، نه به خاطر نمره یا مدرک، بلکه به خاطر اینکه می‌خواستم
+            بفهمم پشت این همه اپلیکیشن‌های اعتیادآور چه خبره.<br />
+            از 19 سالگی فهمیدم که وب فقط یه شبکه‌ی ساده نیست. یک فضای بزرگه؛ پر از
+            داده، پر از اطلاعات. من واردش شدم چون نمی‌خواستم یکی از تماشاگرها باشم.
+            می‌خواستم دستم روی سیم‌های برق پشت پرده باشه.<br />
+            هنوز هم دارم یاد می‌گیرم. چون توی این بازی هیچ‌وقت آخرین لِوِل وجود نداره.
+            دنبال تجربه‌هام، دنبال آدمایی که مثل من فکر کنن، دنبال همکاری‌هایی که
+            به جای پول، ارزش واقعی تولید کنن.<br />
+            پول؟ آره، لازمه. ولی چیزی که دنبالش می‌گردم بزرگ‌تره: آزادی از سیستمی
+            که همه‌مون رو توی یک حلقه‌ی بی‌پایان مصرف و تولید زندانی کرده.<br />
             من شاید یک برنامه نویس حرفه ای نباشم ولی یک تماشاگر ساده هم نیستم. همین.
           </p>
         </div>
 
         <!-- Profile Image -->
-        <div class="relative flex justify-center items-center group">
+        <div class="prof relative flex justify-center items-center group">
           <div
             class="absolute -inset-4 rounded-full bg-gradient-to-tr from-[#FF6A3D] to-[#FF9E3D] opacity-30 blur-2xl group-hover:opacity-60 transition duration-500"
           >
@@ -48,5 +55,28 @@ import "../styles/style.css";
         </div>
       </section>
     </main>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        ScrollReveal().reveal(".prof", {
+          duration: 1000,
+          origin: "left",
+          distance: "20px",
+          easing: "ease-in-out",
+          reset: false,
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        ScrollReveal().reveal(".text", {
+          duration: 1000,
+          origin: "bottom",
+          distance: "20px",
+          easing: "ease-in-out",
+          reset: false,
+        });
+      });
+    </script>
   </body>
 </html>

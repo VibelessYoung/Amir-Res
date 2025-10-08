@@ -19,7 +19,7 @@ import "../styles/style.css";
         مهارت‌ها
       </h2>
       <div
-        class="bg-[#1F242C] p-20 w-full max-w-[900px] rounded-xl shadow-lg hover:shadow-[#FF6A3D]/30 border border-[#2C313A] transition"
+        class="box bg-[#1F242C] p-20 w-full max-w-[900px] rounded-xl shadow-lg hover:shadow-[#FF6A3D]/30 border border-[#2C313A] transition"
       >
         <section class="max-w-3xl mx-auto">
           <div class="space-y-4">
@@ -189,6 +189,18 @@ import "../styles/style.css";
         </section>
       </div>
     </main>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        ScrollReveal().reveal(".box", {
+          duration: 1000,
+          origin: "bottom",
+          distance: "40px",
+          easing: "ease-in-out",
+          reset: false,
+        });
+      });
+    </script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const bars = document.querySelectorAll('[role="progressbar"]');

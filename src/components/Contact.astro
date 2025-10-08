@@ -22,7 +22,7 @@ import "../styles/style.css";
       </p>
       <div class="grid md:grid-cols-3 gap-8 px-10">
         <div
-          class="bg-[#23262F]/60 backdrop-blur-xl p-8 rounded-2xl border border-[#2f333d]
+          class="card bg-[#23262F]/60 backdrop-blur-xl p-8 rounded-2xl border border-[#2f333d]
                 hover:scale-105 hover:shadow-lg hover:shadow-[#FF6A3D]/30 transition duration-300"
         >
           <div
@@ -46,7 +46,7 @@ import "../styles/style.css";
           </div>
         </div>
         <div
-          class="bg-[#23262F]/60 backdrop-blur-xl p-8 rounded-2xl border border-[#2f333d]
+          class="card bg-[#23262F]/60 backdrop-blur-xl p-8 rounded-2xl border border-[#2f333d]
                 hover:scale-105 hover:shadow-lg hover:shadow-[#FF6A3D]/30 transition duration-300"
         >
           <div
@@ -76,7 +76,7 @@ import "../styles/style.css";
         </div>
 
         <div
-          class="bg-[#23262F]/60 backdrop-blur-xl p-8 rounded-2xl border border-[#2f333d]
+          class="card bg-[#23262F]/60 backdrop-blur-xl p-8 rounded-2xl border border-[#2f333d]
                 hover:scale-105 hover:shadow-lg hover:shadow-[#FF6A3D]/30 transition duration-300"
         >
           <div
@@ -102,6 +102,18 @@ import "../styles/style.css";
           </div>
         </div>
       </div>
+      <script src="https://unpkg.com/scrollreveal"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          ScrollReveal().reveal(".card", {
+            duration: 1000,
+            origin: "bottom",
+            distance: "20px",
+            easing: "ease-in-out",
+            reset: false,
+          });
+        });
+      </script>
     </main>
   </body>
 </html>

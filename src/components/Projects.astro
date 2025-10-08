@@ -20,7 +20,7 @@ import "swiper/css/pagination";
         پروژه ها
       </h2>
       <div class="flex w-full items-start">
-        <div class="hidden lg:flex w-1/4 justify-center self-center">
+        <div class="tick hidden lg:flex w-1/4 justify-center self-center">
           <div dir="rtl" class="flex flex-col items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -188,6 +188,29 @@ import "swiper/css/pagination";
         </div>
       </div>
     </main>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        ScrollReveal().reveal(".tick", {
+          duration: 1000,
+          origin: "left",
+          distance: "20px",
+          easing: "ease-in-out",
+          reset: false,
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        ScrollReveal().reveal(".MySwiper", {
+          duration: 1000,
+          origin: "right",
+          distance: "20px",
+          easing: "ease-in-out",
+          reset: false,
+        });
+      });
+    </script>
     <script>
       import Swiper from "swiper";
       import { Navigation, Pagination, Autoplay } from "swiper/modules";
