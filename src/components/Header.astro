@@ -51,7 +51,7 @@ import "../styles/style.css";
         </div>
 
         <!-- Navbar -->
-        <nav class="flex gap-8 text-lg font-medium">
+        <nav class="hidden md:flex gap-8 text-lg font-medium">
           <a href="#" class="relative group"
             >About
             <span
@@ -77,10 +77,24 @@ import "../styles/style.css";
             ></span>
           </a>
         </nav>
+        <div class="md:hidden z-10">
+          <button id="menu-btn" class="text-white text-3xl focus:outline-none">
+            ☰
+          </button>
+        </div>
+        <div
+          id="mobile-menu"
+          class="hidden flex-col gap-4 absolute top-16 right-10 bg-black/60 backdrop-blur-md p-5 rounded-xl text-lg"
+        >
+          <a href="#">About</a>
+          <a href="#">Skills</a>
+          <a href="#">Projects</a>
+          <a href="#">Contact</a>
+        </div>
       </div>
 
       <h1
-        class="text-[#FF6A3D] text-9xl absolute inset-0 z-10 text-center top-32 font-black opacity-50"
+        class="text-[#FF6A3D] text-7xl sm:text-9xl absolute inset-0 z-10 text-center top-32 font-black opacity-50"
       >
         Welcome
       </h1>
@@ -89,13 +103,14 @@ import "../styles/style.css";
         dir="rtl"
         class="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none"
       >
-        <h1 class="text-6xl font-semibold">
+        <h1 class="text-3xl sm:text-6xl font-semibold text-center">
           <span class="typing-effect"></span>
           <span class="typing-cursor">|</span>
         </h1>
       </div>
+
       <div
-        class="flex justify-center items-center gap-10 absolute inset-0 z-10 top-7/12"
+        class="icons-social flex justify-center items-center gap-10 absolute inset-0 z-10 top-7/12"
       >
         <a href="https://t.me/vibelessyoung" target="_blank">
           <div
@@ -192,11 +207,26 @@ import "../styles/style.css";
         // TEXTS
 
         if (typingElement) {
-          const texts = ["سلام", "امیرم", "Front-End Developer", "want to be a FullStack Dev", "WebDesigner", "Programmer"];
+          const texts = [
+            "سلام",
+            "امیرم",
+            "Front-End Developer",
+            "want to be a FullStack Dev",
+            "WebDesigner",
+            "Programmer",
+          ];
 
           //  START TYPE EFFECT
           createTypingEffect(typingElement, texts, 150);
         }
+      });
+    </script>
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
       });
     </script>
   </body>

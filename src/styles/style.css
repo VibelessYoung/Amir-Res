@@ -73,3 +73,9 @@ body {
     display: none !important;
   }
 }
+
+@media (max-width: 385px) {
+  .icons-social {
+    gap: 10px;
+  }
+}
