@@ -5,247 +5,229 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <main id="projects" class="py-30 flex flex-col bg-[#181C23]">
-      <h2
-        class="relative text-4xl font-black mb-6 text-white self-end pr-30 after:content-[''] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-24 after:h-[3px] after:bg-[#FF6A3D]"
-      >
-        پروژه ها
-      </h2>
-      <div class="flex w-full items-start">
-        <div class="tick hidden lg:flex w-1/4 justify-center self-center">
-          <div dir="rtl" class="flex flex-col items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="size-40 text-[#FF6A3D]"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                clip-rule="evenodd"></path>
-            </svg>
-            <strong class="text-center text-[#FF6A3D] text-2xl"
-              >جهت مشاهده همه پروژه ها به گیت هاب مراجعه کنید.</strong
-            >
-          </div>
-        </div>
-        <div  class="w-full mt-5 lg:w-3/4">
-          <!-- SLIDER -->
-          <div class="sm:col-span-2 px-3 sm:px-0">
-            <div class="swiper MySwiper rounded-2xl overflow-hidden w-full">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div
-                    class="h-auto flex flex-col gap-4 bg-[#1F242C] rounded-2xl shadow-2xl overflow-hidden group"
+<section id="projects" class="py-30 flex flex-col bg-[#181C23]">
+  <h2
+    class="relative text-4xl font-black mb-6 text-white self-end pr-30 after:content-[''] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-24 after:h-[3px] after:bg-[#FF6A3D]"
+  >
+    پروژه ها
+  </h2>
+  <div class="flex w-full items-start">
+    <div class="tick hidden lg:flex w-1/4 justify-center self-center">
+      <div dir="rtl" class="flex flex-col items-center justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="size-40 text-[#FF6A3D]"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <strong class="text-center text-[#FF6A3D] text-2xl"
+          >جهت مشاهده همه پروژه ها به گیت هاب مراجعه کنید.</strong
+        >
+      </div>
+    </div>
+    <div class="w-full mt-5 lg:w-3/4">
+      <!-- SLIDER -->
+      <div class="sm:col-span-2 px-3 sm:px-0">
+        <div class="swiper MySwiper rounded-2xl overflow-hidden w-full">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div
+                class="h-auto flex flex-col gap-4 bg-[#1F242C] rounded-2xl shadow-2xl overflow-hidden group"
+              >
+                <img
+                  src="/images/twitter.jpg"
+                  alt="twitter"
+                  class="w-full h-44 object-cover"
+                />
+                <h1 class="text-center text-gray-300 font-black text-2xl mt-3">
+                  Twitter
+                </h1>
+                <p
+                  dir="rtl"
+                  class="text-center text-gray-300 text-sm mt-2 px-3"
+                >
+                  شبیه سازی سایت تویتر با ای پی آی همراه قابلیت لود دیتا و ارسال
+                  نظر و فیلتر نظرات همراه هشتگ ها.
+                </p>
+                <a
+                  href="https://twitter-web-clone-dusky.vercel.app/"
+                  target="_blank"
+                >
+                  <button
+                    class="mb-3 flex items-center justify-center gap-2 px-4 py-2 mt-auto mx-auto bg-[#FF6A3D] hover:bg-orange-400 rounded-lg text-sm border-0 transition-colors"
                   >
-                    <img
-                      src="/images/twitter.jpg"
-                      alt="twitter"
-                      class="w-full h-44 object-cover"
-                    />
-                    <h1
-                      class="text-center text-gray-300 font-black text-2xl mt-3"
-                    >
-                      Twitter
-                    </h1>
-                    <p
-                      dir="rtl"
-                      class="text-center text-gray-300 text-sm mt-2 px-3"
-                    >
-                      شبیه سازی سایت تویتر با ای پی آی همراه قابلیت لود دیتا و
-                      ارسال نظر و فیلتر نظرات همراه هشتگ ها.
-                    </p>
-                    <a
-                      href="https://twitter-web-clone-dusky.vercel.app/"
-                      target="_blank"
-                    >
-                      <button
-                        class="mb-3 flex items-center justify-center gap-2 px-4 py-2 mt-auto mx-auto bg-[#FF6A3D] hover:bg-orange-400 rounded-lg text-sm border-0 transition-colors"
-                      >
-                        مشاهده
-                      </button></a
-                    >
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div
-                    class="h-auto flex flex-col gap-4 bg-[#1F242C] rounded-2xl shadow-2xl overflow-hidden group"
-                  >
-                    <img
-                      src="/images/text.jpg"
-                      alt="text"
-                      class="w-full h-44 object-cover"
-                    />
-                    <h1
-                      class="text-center text-gray-300 text-2xl font-black mt-3"
-                    >
-                      OCR-Extractor
-                    </h1>
-                    <p
-                      dir="rtl"
-                      class="text-center text-gray-300 text-sm mt-2 px-3"
-                    >
-                      یک وبسایت ساده ولی مدرن برای آپلود تصاویر و استخراج متن از
-                      آنها به سادگی.
-                    </p>
-                    <a
-                      href="https://ocr-extractor-web-page.vercel.app/"
-                      target="_blank"
-                    >
-                      <button
-                        class="mb-3 flex items-center justify-center gap-2 px-4 py-2 mt-auto mx-auto bg-[#FF6A3D] hover:bg-orange-400 rounded-lg text-sm border-0 transition-colors"
-                      >
-                        مشاهده
-                      </button></a
-                    >
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div
-                    class="h-auto flex flex-col gap-4 bg-[#1F242C] rounded-2xl shadow-2xl overflow-hidden group"
-                  >
-                    <img
-                      src="/images/weather.jpg"
-                      alt="weather"
-                      class="w-full h-44 object-cover"
-                    />
-                    <h1
-                      class="text-center text-gray-300 text-2xl font-black mt-3"
-                    >
-                      Weather
-                    </h1>
-                    <p
-                      dir="rtl"
-                      class="text-center text-gray-300 text-sm mt-2 px-3"
-                    >
-                      یک وبسایت که با دریافت لوکیشن به شما وضعیت فعلی آب و هوا و
-                      پیش بینی چند روز آینده رو نمایش میده.
-                    </p>
-                    <a
-                      href="https://github.com/VibelessYoung/Weather-WebPage"
-                      target="_blank"
-                    >
-                      <button
-                        class="mb-3 flex items-center justify-center gap-2 px-4 py-2 mt-auto mx-auto bg-[#FF6A3D] hover:bg-orange-400 rounded-lg text-sm border-0 transition-colors"
-                      >
-                        مشاهده
-                      </button></a
-                    >
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div
-                    class="h-auto flex flex-col gap-4 bg-[#1F242C] rounded-2xl shadow-2xl overflow-hidden group"
-                  >
-                    <img
-                      src="/images/search.jpg"
-                      alt="search"
-                      class="w-full h-44 object-cover"
-                    />
-                    <h1
-                      class="text-center text-gray-300 text-2xl font-black mt-3"
-                    >
-                      JobRemote
-                    </h1>
-                    <p
-                      dir="rtl"
-                      class="text-center text-gray-300 text-sm mt-2 px-3"
-                    >
-                      یک وبسایت پیدا کردن شغل همراه ای پی آی که قابلیت های سرچ
-                      و. . . داره.
-                    </p>
-                    <a
-                      href="https://jobs-remot-web-page.vercel.app/"
-                      target="_blank"
-                    >
-                      <button
-                        class="mb-3 flex items-center justify-center gap-2 px-4 py-2 mt-auto mx-auto bg-[#FF6A3D] hover:bg-orange-400 rounded-lg text-sm border-0 transition-colors"
-                      >
-                        مشاهده
-                      </button></a
-                    >
-                  </div>
-                </div>
+                    مشاهده
+                  </button></a
+                >
               </div>
-
-              <!-- Pagination -->
-              <div class="swiper-pagination"></div>
-
-              <!-- Navigation -->
-              <div class="swiper-button-next custom-swiper-btn"></div>
-              <div class="swiper-button-prev custom-swiper-btn"></div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="h-auto flex flex-col gap-4 bg-[#1F242C] rounded-2xl shadow-2xl overflow-hidden group"
+              >
+                <img
+                  src="/images/text.jpg"
+                  alt="text"
+                  class="w-full h-44 object-cover"
+                />
+                <h1 class="text-center text-gray-300 text-2xl font-black mt-3">
+                  OCR-Extractor
+                </h1>
+                <p
+                  dir="rtl"
+                  class="text-center text-gray-300 text-sm mt-2 px-3"
+                >
+                  یک وبسایت ساده ولی مدرن برای آپلود تصاویر و استخراج متن از
+                  آنها به سادگی.
+                </p>
+                <a
+                  href="https://ocr-extractor-web-page.vercel.app/"
+                  target="_blank"
+                >
+                  <button
+                    class="mb-3 flex items-center justify-center gap-2 px-4 py-2 mt-auto mx-auto bg-[#FF6A3D] hover:bg-orange-400 rounded-lg text-sm border-0 transition-colors"
+                  >
+                    مشاهده
+                  </button></a
+                >
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="h-auto flex flex-col gap-4 bg-[#1F242C] rounded-2xl shadow-2xl overflow-hidden group"
+              >
+                <img
+                  src="/images/weather.jpg"
+                  alt="weather"
+                  class="w-full h-44 object-cover"
+                />
+                <h1 class="text-center text-gray-300 text-2xl font-black mt-3">
+                  Weather
+                </h1>
+                <p
+                  dir="rtl"
+                  class="text-center text-gray-300 text-sm mt-2 px-3"
+                >
+                  یک وبسایت که با دریافت لوکیشن به شما وضعیت فعلی آب و هوا و پیش
+                  بینی چند روز آینده رو نمایش میده.
+                </p>
+                <a
+                  href="https://github.com/VibelessYoung/Weather-WebPage"
+                  target="_blank"
+                >
+                  <button
+                    class="mb-3 flex items-center justify-center gap-2 px-4 py-2 mt-auto mx-auto bg-[#FF6A3D] hover:bg-orange-400 rounded-lg text-sm border-0 transition-colors"
+                  >
+                    مشاهده
+                  </button></a
+                >
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="h-auto flex flex-col gap-4 bg-[#1F242C] rounded-2xl shadow-2xl overflow-hidden group"
+              >
+                <img
+                  src="/images/search.jpg"
+                  alt="search"
+                  class="w-full h-44 object-cover"
+                />
+                <h1 class="text-center text-gray-300 text-2xl font-black mt-3">
+                  JobRemote
+                </h1>
+                <p
+                  dir="rtl"
+                  class="text-center text-gray-300 text-sm mt-2 px-3"
+                >
+                  یک وبسایت پیدا کردن شغل همراه ای پی آی که قابلیت های سرچ و. .
+                  . داره.
+                </p>
+                <a
+                  href="https://jobs-remot-web-page.vercel.app/"
+                  target="_blank"
+                >
+                  <button
+                    class="mb-3 flex items-center justify-center gap-2 px-4 py-2 mt-auto mx-auto bg-[#FF6A3D] hover:bg-orange-400 rounded-lg text-sm border-0 transition-colors"
+                  >
+                    مشاهده
+                  </button></a
+                >
+              </div>
             </div>
           </div>
+
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- Navigation -->
+          <div class="swiper-button-next custom-swiper-btn"></div>
+          <div class="swiper-button-prev custom-swiper-btn"></div>
         </div>
       </div>
-    </main>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        ScrollReveal().reveal(".tick", {
-          duration: 1000,
-          origin: "left",
-          distance: "20px",
-          easing: "ease-in-out",
-          reset: false,
-        });
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        ScrollReveal().reveal(".MySwiper", {
-          duration: 1000,
-          origin: "right",
-          distance: "20px",
-          easing: "ease-in-out",
-          reset: false,
-        });
-      });
-    </script>
-    <script>
-      import Swiper from "swiper";
-      import { Navigation, Pagination, Autoplay } from "swiper/modules";
+    </div>
+  </div>
+</section>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    ScrollReveal().reveal(".tick", {
+      duration: 1000,
+      origin: "left",
+      distance: "20px",
+      easing: "ease-in-out",
+      reset: false,
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    ScrollReveal().reveal(".MySwiper", {
+      duration: 1000,
+      origin: "right",
+      distance: "20px",
+      easing: "ease-in-out",
+      reset: false,
+    });
+  });
+</script>
+<script>
+  import Swiper from "swiper";
+  import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-      const swiper = new Swiper(".MySwiper", {
-        modules: [Navigation, Pagination, Autoplay], // 👈 اینو اضافه کن
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-          delay: 2000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-          0: {
-            slidesPerView: 1,
-          },
-          640: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-          1280: {
-            slidesPerView: 3,
-          },
-        },
-      });
-    </script>
-  </body>
-</html>
+  const swiper = new Swiper(".MySwiper", {
+    modules: [Navigation, Pagination, Autoplay], // 👈 اینو اضافه کن
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+      1280: {
+        slidesPerView: 3,
+      },
+    },
+  });
+</script>
