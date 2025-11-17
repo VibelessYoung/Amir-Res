@@ -2,22 +2,13 @@
 import "../styles/style.css";
 ---
 
-<section id="about" class="bg-[#181C23] py-16 pb-30">
-  <section
-    dir="rtl"
-    class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-12 px-6"
-  >
-    <!-- Text Section -->
-    <div
-      class="text flex-1 bg-gradient-to-br from-[#1F242C] to-[#23262F] p-8 rounded-2xl shadow-lg border border-[#FF6A3D]/30 hover:shadow-[#FF6A3D]/30 transition duration-500"
-    >
-      <h2 class="text-4xl font-black text-[#FF6A3D] mb-4 relative">
-        درباره من
-        <span
-          class="absolute bottom-0 left-0 w-20 h-1 bg-[#FF6A3D] rounded-full"
-        ></span>
-      </h2>
-      <p class="mt-6 text-gray-300 leading-8 text-lg">
+<div class="content-presentation" dir="rtl" id="about">
+  <div class="linear-gradient-2"></div>
+  <div class="linear-gradient-1"></div>
+  <div class="container-persentation">
+    <div class="container-text">
+      <h2 class="text-name">Amir Hamidiyan</h2>
+      <p class="p-presentation" dir="rtl">
         امیرم ، از 16 سالگی با شرکت در کلاس های فنی حرفه ای و اخذ مدرکش وارد
         دنیای برنامه نویسی شدم.<br />
         از 19 سالگی به دلیل علاقه به طراحی سایت وارد حوزه وب شدم.<br />
@@ -25,44 +16,219 @@ import "../styles/style.css";
         خوشم میاد از افرادی که مثل من فکر میکنن علاقه مندم به شرکت هایی که در کنار
         پول ارزش واقعی ایجاد میکنن.<br />
         خلاصه بگم من شاید یک برنامه نویس حرفه ای نباشم اما جزوی از تماشاگر ها هم
-        نیستم همین.
+        نیستم همین.        
       </p>
     </div>
-
-    <!-- Profile Image -->
-    <div class="prof relative flex justify-center items-center group">
-      <div
-        class="absolute -inset-4 rounded-full bg-gradient-to-tr from-[#FF6A3D] to-[#FF9E3D] opacity-30 blur-2xl group-hover:opacity-60 transition duration-500"
-      >
+    <div class="container-photo-profile">
+      <div class="photo-perfil">
+        <picture>
+          <img src="/images/profile.jpg" alt="Amir" id="inicio" />
+        </picture>
       </div>
-      <img
-        src="/images/profile.jpg"
-        alt="profile"
-        class="relative w-64 h-64 rounded-full object-cover border-4 border-[#23262F] shadow-lg group-hover:scale-105 transition duration-500"
-      />
     </div>
-  </section>
-</section>
+  </div>
+</div>
+
 <script src="https://unpkg.com/scrollreveal"></script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    ScrollReveal().reveal(".prof", {
-      duration: 1000,
-      origin: "left",
-      distance: "20px",
-      easing: "ease-in-out",
-      reset: false,
-    });
-  });
+        ScrollReveal().reveal(".p-presentation", {
+          duration: 1000,
+          origin: "right",
+          distance: "20px",
+          easing: "ease-in-out",
+          reset: false,
+        });
+        ScrollReveal().reveal("#inicio", {
+          duration: 1000,
+          origin: "bottom",
+          distance: "20px",
+          easing: "ease-in-out",
+          reset: false,
+        });
+      });
 </script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    ScrollReveal().reveal(".text", {
-      duration: 1000,
-      origin: "bottom",
-      distance: "20px",
-      easing: "ease-in-out",
-      reset: false,
-    });
-  });
-</script>
+<style>
+  .content-presentation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+  }
+  .linear-gradient-1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500px;
+    height: 520px;
+    background: radial-gradient(
+      at left center,
+      #FF8E3D,
+      transparent,
+      transparent
+    );
+    z-index: 0;
+  }
+  .linear-gradient-2 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      at right center,
+      #FF7A3D,
+      #0A111A,
+      #0A111A
+    );
+    z-index: 0;
+  }
+
+  .container-persentation {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 50px 0;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1355px;
+  }
+  .container-text {
+    position: relative;
+    width: 50%;
+    color: #f6f6f9;
+  }
+
+  .text-hello {
+    padding: 10px 0;
+    font-size: 20px;
+  }
+
+  .text-name {
+    padding: 5px 0;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    text-align: center;
+    color: #FF6A3D;
+  }
+
+  @keyframes rubberband {
+    10% {
+      transform: scaleX(1);
+    }
+    40% {
+      transform: scaleX(1.12) scaleY(0.75);
+    }
+    55% {
+      transform: scaleX(0.85) scaleY(1);
+    }
+    75% {
+      transform: scaleX(0.9) scaleY(1);
+    }
+    90% {
+      transform: scaleX(1.85) scaleY(0.95);
+    }
+    100% {
+      transform: scaleX(1) scaleY(1);
+    }
+  }
+
+  .p-presentation {
+    padding: 12px 0;
+    font-size: 19px;
+    width: 90%;
+    text-align: left;
+  }
+
+  .container-photo-profile {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .photo-perfil {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    height: 300px;
+    width: 300px;
+    margin-top: 30px;
+    margin-left: 110px;
+    border-radius: 50%;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* border-radius: 64% 36% 29% 71% / 59% 79% 21% 41%; */
+    transition: all 0.5s;
+  }
+
+  .photo-perfil img {
+    position: relative;
+    display: block;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transition: 0.3s;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    filter: contrast(110%) drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+    transition: transform 0.5s ease;
+  }
+
+  .photo-perfil:hover img {
+  transform: scale(1.05);
+}
+
+.photo-perfil:hover {
+  box-shadow: 
+  0px 0px 5px #FF5A3D,
+  0px 0px 30px #FF6A3D,
+  0px 0px 90px #FF9E3D;
+}
+
+   {
+    /* responsive*/
+  }
+  @media (max-width: 900px) {
+    .container-persentation {
+      flex-direction: column-reverse;
+      height: auto;
+      gap: 30px;
+      padding-top: 100px;
+    }
+    .container-photo-profile {
+      width: 100%;
+      justify-content: center;
+      justify-items: center;
+      margin: 0;
+    }
+    .photo-perfil {
+      margin: 0;
+    }
+    .container-text {
+      width: 100%;
+    }
+
+    .text-name{
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .p-presentation {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .linear-gradient-1 {
+      display: none;
+    }
+  }
+</style>

@@ -6,7 +6,7 @@ import "../styles/style.css";
   class="h-screen px-10 pt-4 flex flex-col
          text-white bg-[url('/images/header.png')] bg-no-repeat bg-cover bg-center"
 >
-  <div class="absolute inset-0 bg-black/40 backdrop-blur-md z-0"></div>
+  <div class="absolute inset-0 bg-black/40 backdrop-blur-md z-0 h-screen"></div>
 
   <!-- Logo / Brand -->
 
@@ -172,6 +172,18 @@ import "../styles/style.css";
     </a>
   </div>
 </header>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+        ScrollReveal().reveal(".icons-social", {
+          duration: 1000,
+          origin: "bottom",
+          distance: "20px",
+          easing: "ease-in-out",
+          reset: false,
+        });
+      });
+</script>
 <script>
   function createTypingEffect(element, texts, speed = 100) {
     let textIndex = 0;

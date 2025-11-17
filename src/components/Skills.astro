@@ -4,15 +4,23 @@ import "../styles/style.css";
 
 <section
   id="skills"
-  class="py-30 bg-[#181C23] flex flex-col items-center justify-center border-4 border-t-[#FF6A3D]"
+  class="relative z-10 py-30 bg-[#0A111A] flex flex-col items-center justify-center border-4"
 >
+  <div
+    class="absolute left-0 top-[1px] w-full h-full bg-gradient-to-t from-[#FF6A3D] to-[#0A111A] z-0"
+  >
+  </div>
+  <div
+    class="absolute left-0 top-0 w-full h-full bg-black/10 backdrop-blur-[2px] z-0"
+  >
+  </div>
   <h2
-    class="relative text-4xl font-black mb-6 text-white self-end pr-30 after:content-[''] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-24 after:h-[3px] after:bg-[#FF6A3D]"
+    class="relative text-4xl font-black mb-6 text-white self-end pr-30 after:content-[''] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-24 after:h-[3px] after:bg-[#FF9A3D]"
   >
     مهارت‌ها
   </h2>
   <div
-    class="box bg-[#1F242C] p-20 w-full max-w-[900px] rounded-xl shadow-lg hover:shadow-[#FF6A3D]/30 border border-[#2C313A] transition"
+    class="box bg-white/10 backdrop-blur-xl p-20 w-full max-w-[900px] mx-5 rounded-xl transition-all duration-300 shadow-lg hover:-translate-y-3 border border-white/50"
   >
     <section class="max-w-3xl mx-auto">
       <div class="space-y-4">
@@ -209,7 +217,7 @@ import "../styles/style.css";
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     bars.forEach((b) => {
