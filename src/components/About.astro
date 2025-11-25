@@ -62,7 +62,7 @@ import "../styles/style.css";
     height: 520px;
     background: radial-gradient(
       at left center,
-      #FF8E3D,
+      #A855F7,
       transparent,
       transparent
     );
@@ -76,7 +76,7 @@ import "../styles/style.css";
     height: 100%;
     background: radial-gradient(
       at right center,
-      #FF7A3D,
+      #A855F7,
       #0A111A,
       #0A111A
     );
@@ -111,7 +111,7 @@ import "../styles/style.css";
     letter-spacing: 1px;
     margin-top: 30px;
     text-align: center;
-    color: #FF6A3D;
+    color: #A855F7;
   }
 
   @keyframes rubberband {
@@ -150,45 +150,31 @@ import "../styles/style.css";
   }
 
   .photo-perfil {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    height: 300px;
-    width: 300px;
-    margin-top: 30px;
-    margin-left: 110px;
-    border-radius: 50%;
-    z-index: 10;
-    background: rgba(255, 255, 255, 0.2);
-    -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    /* border-radius: 64% 36% 29% 71% / 59% 79% 21% 41%; */
-    transition: all 0.5s;
-  }
-
-  .photo-perfil img {
-    position: relative;
-    display: block;
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    transition: 0.3s;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-    filter: contrast(110%) drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
-    transition: transform 0.5s ease;
-  }
-
-  .photo-perfil:hover img {
-  transform: scale(1.05);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  height: 300px;
+  width: 300px;
+  margin-top: 30px;
+  margin-left: 110px;
+  border-radius: 50%;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  border: 2px solid rgba(168, 85, 247, 0.4);
+  transition: all 0.6s ease;
 }
 
-.photo-perfil:hover {
-  box-shadow: 
-  0px 0px 5px #FF5A3D,
-  0px 0px 30px #FF6A3D,
-  0px 0px 90px #FF9E3D;
+.photo-perfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.photo-perfil:hover img {
+  transform: scale(1.12);
 }
 
    {
