@@ -19,12 +19,27 @@ import "../styles/style.css";
     <title>Amir</title>
   </head>
   <body>
-    <Header />
-    <Main />
-    <Footer />
-    <script
-      src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"
-    ></script>
-    <script src="https://unpkg.com/scrollreveal" type="module"></script>
+    <div
+      id="scroll-progress"
+      class="fixed top-0 left-0 h-[4px] bg-gradient-to-br from-[#8a2be2] via-[#da70d6] to-[#4b0082] w-0 z-50 transition-all duration-75"
+    >
+    </div>
   </body>
+  <Header />
+  <Main />
+  <Footer />
+  <script
+    src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"
+  ></script>
+  <script src="https://unpkg.com/scrollreveal" type="module"></script>
+  <script>
+    const progressBar = document.getElementById("scroll-progress");
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      progressBar.style.width = scrollPercent + "%";
+    });
+  </script>
 </html>
