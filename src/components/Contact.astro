@@ -12,10 +12,68 @@ import "../styles/style.css";
   >
     ارتباط با من
   </h2>
-  <p id="contact" dir="rtl" class="text-[#7B7F86] mb-12 max-w-2xl mx-auto z-40">
+  <p id="contact" dir="rtl" class="text-[#7B7F86] mb-8 max-w-2xl mx-auto z-40">
     اگر پروژه‌ای دارید یا می‌خواهید درباره همکاری صحبت کنیم، خوشحال می‌شوم از
     شما بشنوم.
   </p>
+  <form
+    id="contact-form"
+    class="mb-8 max-w-3xl mx-auto bg-[#23262F]/60 backdrop-blur-xl p-10 rounded-2xl border border-[#2f333d]
+         shadow-lg shadow-black/10 grid grid-cols-1 md:grid-cols-2 gap-6 text-right card"
+  >
+    <div class="flex flex-col">
+      <label class="text-[#E5E7EB] mb-2 font-semibold">نام و نام خانوادگی</label
+      >
+      <input
+        name="name"
+        type="text"
+        required
+        class="input rounded-xl bg-[#0F141B]/70 border border-[#2f333d] p-3 text-white
+             focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition"
+        placeholder="your name"
+      />
+    </div>
+    <div class="flex flex-col">
+      <label class="text-[#E5E7EB] mb-2 font-semibold">ایمیل</label>
+      <input
+        name="email"
+        type="email"
+        required
+        class="input rounded-xl bg-[#0F141B]/70 border border-[#2f333d] p-3 text-white
+             focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition"
+        placeholder="you@example.com"
+      />
+    </div>
+    <div class="flex flex-col md:col-span-2">
+      <label class="text-[#E5E7EB] mb-2 font-semibold">عنوان پیام</label>
+      <input
+        name="title"
+        type="text"
+        required
+        class="input rounded-xl bg-[#0F141B]/70 border border-[#2f333d] p-3 text-white
+             focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition"
+        placeholder="مثلاً: همکاری در پروژه"
+      />
+    </div>
+    <div class="flex flex-col md:col-span-2">
+      <label class="text-[#E5E7EB] mb-2 font-semibold">متن پیام</label>
+      <textarea
+        name="message"
+        required
+        rows="5"
+        class="textarea rounded-xl bg-[#0F141B]/70 border border-[#2f333d] p-4 text-white
+             focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition resize-none"
+        placeholder="متن پیام شما..."></textarea>
+    </div>
+    <button
+      type="submit"
+      class="md:col-span-2 w-full py-3 bg-gradient-to-tr from-purple-600 to-purple-500
+           text-white rounded-xl font-bold text-lg shadow-lg shadow-purple-700/30
+           hover:from-purple-500 hover:to-purple-600 active:scale-95 transition"
+    >
+      ارسال پیام
+    </button>
+  </form>
   <div class="grid md:grid-cols-3 gap-8 px-10">
     <div
       class="card bg-[#23262F]/60 backdrop-blur-xl p-8 rounded-2xl border border-[#2f333d]
@@ -107,6 +165,84 @@ import "../styles/style.css";
         easing: "ease-in-out",
         reset: false,
       });
+    });
+  </script>
+  <script>
+    import emailjs from "emailjs-com";
+    emailjs.init("Tarw5VCGRr3Tat9Xu");
+
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const btn = form.querySelector("button");
+
+      // حالت در حال ارسال
+      btn.innerText = "در حال ارسال...";
+      btn.disabled = true;
+      btn.classList.remove("bg-green-500", "bg-red-500");
+      btn.classList.add(
+        "bg-blue-500",
+        "hover:bg-blue-600",
+        "transition-colors",
+      );
+
+      const params = {
+        name: form.name.value,
+        email: form.email.value,
+        title: form.title.value,
+        message: form.message.value,
+        time: new Date().toLocaleString(),
+      };
+
+      emailjs
+        .send("service_n7xix7t", "template_tlovqg7", params)
+        .then(() => {
+          btn.innerText = "ارسال شد";
+          btn.disabled = false;
+          btn.classList.remove(
+            "bg-blue-500",
+            "hover:bg-blue-600",
+            "bg-red-500",
+          );
+          btn.classList.add("bg-green-500", "hover:bg-green-600");
+
+          setTimeout(() => {
+            btn.classList.remove("bg-green-500", "hover:bg-green-600");
+            btn.classList.add(
+              "bg-gradient-to-tr",
+              "from-purple-600",
+              "to-purple-500",
+              "hover:from-purple-500",
+              "hover:to-purple-600",
+            );
+            btn.innerText = "ارسال پیام";
+          }, 3000);
+          form.reset();
+        })
+        .catch((err) => {
+          console.error(err);
+          btn.innerText = "ارسال ناموفق! دوباره تلاش کن";
+          btn.disabled = false;
+          btn.classList.remove(
+            "bg-blue-500",
+            "hover:bg-blue-600",
+            "bg-green-500",
+            "hover:bg-green-600",
+          );
+          btn.classList.add("bg-red-500", "hover:bg-red-600");
+
+          setTimeout(() => {
+            btn.classList.remove("bg-red-500", "hover:bg-red-600");
+            btn.classList.add(
+              "bg-gradient-to-tr",
+              "from-purple-600",
+              "to-purple-500",
+              "hover:from-purple-500",
+              "hover:to-purple-600",
+            );
+            btn.innerText = "ارسال پیام";
+          }, 3000);
+        });
     });
   </script>
 </section>
