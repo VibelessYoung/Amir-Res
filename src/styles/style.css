@@ -1,11 +1,9 @@
 @import "tailwindcss";
-
 .typing-cursor {
   display: inline-block;
   margin-left: 3px;
   animation: blink 0.7s infinite;
 }
-
 @keyframes blink {
   0%,
   50% {
@@ -16,31 +14,26 @@
     opacity: 0;
   }
 }
-
 @font-face {
   font-family: "Vazirmatn";
   src: url("../fonts/Vazirmatn/Vazirmatn-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
-
 body {
   font-family: "Vazirmatn", sans-serif;
 }
-
 .swiper-pagination-bullet {
   background-color: #e9d5ff !important;
   opacity: 0.6;
   transition: all 0.3s ease;
 }
-
 .swiper-pagination-bullet-active {
   background-color: #8b5cf6 !important;
   opacity: 1;
   width: 14px;
   height: 14px;
 }
-
 .swiper-button-next,
 .swiper-button-prev {
   color: #8b5cf6 !important;
@@ -54,46 +47,41 @@ body {
   justify-content: center;
   padding: 12px;
 }
-
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
   background-color: #8b5cf6;
   color: #fff !important;
   transform: scale(1.1);
 }
-
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 18px !important;
   font-weight: bold;
 }
-
 @media (max-width: 639px) {
   .custom-swiper-btn {
     display: none !important;
   }
 }
-
 @media (max-width: 385px) {
   .icons-social {
     gap: 10px;
   }
 }
-
 ::-webkit-scrollbar {
   width: 12px;
 }
-
 ::-webkit-scrollbar-track {
   background: #1a1a1a;
   border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(45deg, #8a2be2, #da70d6, #4b0082);
   border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, #4b0082, #da70d6, #8a2be2);
+}
+.typing-effect {
+  transition: all 0.15s ease-out;
 }

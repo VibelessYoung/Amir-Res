@@ -87,10 +87,26 @@ import Typing from "./Typing.astro";
             clip-rule="evenodd"></path>
         </svg>
       </button>
-      <a href="#about" class="hover:text-[#8B5CF6] transition">About</a>
-      <a href="#skills" class="hover:text-[#8B5CF6] transition">Skills</a>
-      <a href="#projects" class="hover:text-[#8B5CF6] transition">Projects</a>
-      <a href="#contact" class="hover:text-[#8B5CF6] transition">Contact</a>
+      <a
+        aria-label="About"
+        href="#about"
+        class="hover:text-[#8B5CF6] transition">About</a
+      >
+      <a
+        aria-label="Skills"
+        href="#skills"
+        class="hover:text-[#8B5CF6] transition">Skills</a
+      >
+      <a
+        aria-label="Projects"
+        href="#projects"
+        class="hover:text-[#8B5CF6] transition">Projects</a
+      >
+      <a
+        aria-label="Contact"
+        href="#contact"
+        class="hover:text-[#8B5CF6] transition">Contact</a
+      >
     </div>
   </div>
   <h1
@@ -110,7 +126,7 @@ import Typing from "./Typing.astro";
   <div
     class="icons-social flex justify-center items-center gap-10 absolute inset-0 z-10 top-7/12"
   >
-    <a href="https://t.me/vibelessyoung" target="_blank">
+    <a aria-label="Telegram" href="https://t.me/vibelessyoung" target="_blank">
       <div
         class="w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center transition-transform transform hover:scale-110 hover:shadow-xl hover:shadow-blue-400/50 cursor-pointer"
       >
@@ -124,7 +140,11 @@ import Typing from "./Typing.astro";
         </svg>
       </div>
     </a>
-    <a href="https://github.com/vibelessyoung" target="_blank">
+    <a
+      aria-label="Github"
+      href="https://github.com/vibelessyoung"
+      target="_blank"
+    >
       <div
         class="w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center transition-transform transform hover:scale-110 hover:shadow-xl hover:shadow-gray-500/50 cursor-pointer"
       >
@@ -141,7 +161,7 @@ import Typing from "./Typing.astro";
         </svg>
       </div>
     </a>
-    <a href="mailto:vibelessyoung@gmail.com">
+    <a aria-label="Gmail" href="mailto:vibelessyoung@gmail.com">
       <div
         class="w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center transition-transform transform hover:scale-110 hover:shadow-xl hover:shadow-red-500/50 cursor-pointer"
       >
