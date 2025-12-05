@@ -7,7 +7,7 @@ import "../styles/style.css";
   <div class="linear-gradient-1"></div>
   <div class="container-persentation">
     <div class="container-text">
-      <h2 class="text-name">Amir Hamidiyan</h2>
+      <h2 class="text-name">درباره من:</h2>
       <p class="p-presentation" dir="rtl">
         امیرم ، از 16 سالگی با شرکت در کلاس های فنی حرفه ای و اخذ مدرکش وارد
         دنیای برنامه نویسی شدم.<br />
@@ -31,14 +31,14 @@ import "../styles/style.css";
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-        ScrollReveal().reveal(".p-presentation", {
+        ScrollReveal().reveal(".p-presentation, .text-name", {
           duration: 1000,
           origin: "right",
           distance: "20px",
           easing: "ease-in-out",
           reset: false,
         });
-        ScrollReveal().reveal("#inicio", {
+        ScrollReveal().reveal(".photo-perfil",{
           duration: 1000,
           origin: "bottom",
           distance: "20px",
