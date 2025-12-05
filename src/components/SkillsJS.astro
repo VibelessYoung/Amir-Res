@@ -1,0 +1,28 @@
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const bars = document.querySelectorAll(".progress");
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const el = entry.target;
+          if (entry.isIntersecting) {
+            el.style.transform = "scaleX(1)";
+          } else {
+            el.style.transform = "scaleX(0)";
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
+
+    bars.forEach((b) => {
+      const percent = b.dataset.value;
+      b.style.width = percent + "%";
+      b.style.transformOrigin = "left";
+      b.style.transform = "scaleX(0)";
+      b.style.transition = "transform 1s ease-out";
+      io.observe(b);
+    });
+  });
+</script>

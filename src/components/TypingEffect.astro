@@ -1,0 +1,38 @@
+---
+
+---
+
+<span class="typing-effect"></span>
+<script is:inline type="module">
+  const element = document.querySelector(".typing-effect");
+  const texts = [
+    "Programmer",
+    "WebDesigner",
+    "Front-End Developer",
+    "Become a FullStack Developer",
+  ];
+  let index = 0,
+    charIndex = 0,
+    deleting = false;
+
+  function type() {
+    const text = texts[index];
+    if (deleting) element.textContent = text.substring(0, charIndex--);
+    else element.textContent = text.substring(0, charIndex++);
+
+    let speed = 150;
+    if (deleting) speed /= 2;
+    if (!deleting && charIndex === text.length) {
+      deleting = true;
+      speed = 2000;
+    }
+    if (deleting && charIndex === 0) {
+      deleting = false;
+      index = (index + 1) % texts.length;
+      speed = 500;
+    }
+
+    setTimeout(type, speed);
+  }
+  type();
+</script>

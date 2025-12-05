@@ -1,5 +1,8 @@
 ---
 import "../styles/style.css";
+import PresentationReveal from "./PresentationReveal.astro";
+import ProfileImage from "./ProfileImage.astro";
+import AboutReveall from "./AboutReveall.astro";
 ---
 
 <div class="content-presentation" dir="rtl" id="about">
@@ -21,32 +24,12 @@ import "../styles/style.css";
     </div>
     <div class="container-photo-profile">
       <div class="photo-perfil">
-        <picture>
-          <img src="/images/profile.jpg" alt="Amir" id="inicio" />
-        </picture>
+        <ProfileImage client:visible />
       </div>
     </div>
   </div>
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-        ScrollReveal().reveal(".p-presentation, .text-name", {
-          duration: 1000,
-          origin: "right",
-          distance: "20px",
-          easing: "ease-in-out",
-          reset: false,
-        });
-        ScrollReveal().reveal(".photo-perfil",{
-          duration: 1000,
-          origin: "bottom",
-          distance: "20px",
-          easing: "ease-in-out",
-          reset: false,
-        });
-      });
-</script>
+<AboutReveall client:visible />
 <style>
   .content-presentation {
     position: relative;

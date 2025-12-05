@@ -3,6 +3,8 @@ import "../styles/style.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import SwiperProjects from "./SwiperProjects.astro";
+import ProjectsReveall from "./ProjectsReveall.astro";
 ---
 
 <section id="projects" class="relative z-10 py-30 flex flex-col bg-[#0A111A]">
@@ -39,7 +41,6 @@ import "swiper/css/pagination";
       </div>
     </div>
     <div class="w-full mt-5 lg:w-3/4">
-      <!-- SLIDER -->
       <div class="sm:col-span-2 px-3 sm:px-0">
         <div class="swiper MySwiper rounded-2xl overflow-hidden w-full">
           <div class="swiper-wrapper">
@@ -51,6 +52,7 @@ import "swiper/css/pagination";
                   src="/images/twitter.jpg"
                   alt="twitter"
                   class="w-full h-44 object-cover"
+                  loading="lazy"
                 />
                 <h1 class="text-center text-gray-300 font-black text-2xl mt-3">
                   Twitter
@@ -82,6 +84,7 @@ import "swiper/css/pagination";
                   src="/images/text.jpg"
                   alt="text"
                   class="w-full h-44 object-cover"
+                  loading="lazy"
                 />
                 <h1 class="text-center text-gray-300 text-2xl font-black mt-3">
                   OCR-Extractor
@@ -113,6 +116,7 @@ import "swiper/css/pagination";
                   src="/images/scarlet.jpg"
                   alt="scarlet-nexus"
                   class="w-full h-44 object-cover"
+                  loading="lazy"
                 />
                 <h1 class="text-center text-gray-300 text-2xl font-black mt-3">
                   Saturn-Anime
@@ -141,6 +145,7 @@ import "swiper/css/pagination";
                   src="/images/search.jpg"
                   alt="search"
                   class="w-full h-44 object-cover"
+                  loading="lazy"
                 />
                 <h1 class="text-center text-gray-300 text-2xl font-black mt-3">
                   JobRemote
@@ -165,11 +170,7 @@ import "swiper/css/pagination";
               </div>
             </div>
           </div>
-
-          <!-- Pagination -->
           <div class="swiper-pagination"></div>
-
-          <!-- Navigation -->
           <div class="swiper-button-next custom-swiper-btn"></div>
           <div class="swiper-button-prev custom-swiper-btn"></div>
         </div>
@@ -177,61 +178,5 @@ import "swiper/css/pagination";
     </div>
   </div>
 </section>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    ScrollReveal().reveal(".tick", {
-      duration: 1000,
-      origin: "left",
-      distance: "20px",
-      easing: "ease-in-out",
-      reset: false,
-    });
-  });
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    ScrollReveal().reveal(".MySwiper", {
-      duration: 1000,
-      origin: "right",
-      distance: "20px",
-      easing: "ease-in-out",
-      reset: false,
-    });
-  });
-</script>
-<script>
-  import Swiper from "swiper";
-  import { Navigation, Pagination, Autoplay } from "swiper/modules";
-
-  const swiper = new Swiper(".MySwiper", {
-    modules: [Navigation, Pagination, Autoplay], // 👈 اینو اضافه کن
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-      delay: 2000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      640: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-      1280: {
-        slidesPerView: 3,
-      },
-    },
-  });
-</script>
+<ProjectsReveall client:visible />
+<SwiperProjects client:visible />

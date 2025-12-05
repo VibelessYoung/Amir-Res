@@ -1,5 +1,7 @@
 ---
 import "../styles/style.css";
+import SkillsJS from "./SkillsJS.astro";
+import SkillsReveall from "./SkillsReveall.astro";
 ---
 
 <section
@@ -182,42 +184,5 @@ import "../styles/style.css";
     </section>
   </div>
 </section>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    ScrollReveal().reveal(".box", {
-      duration: 1000,
-      origin: "bottom",
-      distance: "40px",
-      easing: "ease-in-out",
-      reset: false,
-    });
-  });
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const bars = document.querySelectorAll(".progress");
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const el = entry.target;
-          if (entry.isIntersecting) {
-            el.style.transform = "scaleX(1)";
-          } else {
-            el.style.transform = "scaleX(0)";
-          }
-        });
-      },
-      { threshold: 0.3 },
-    );
-
-    bars.forEach((b) => {
-      const percent = b.dataset.value;
-      b.style.width = percent + "%";
-      b.style.transformOrigin = "left";
-      b.style.transform = "scaleX(0)";
-      b.style.transition = "transform 1s ease-out";
-      io.observe(b);
-    });
-  });
-</script>
+<SkillsReveall client:visible />
+<SkillsJS client:visible />

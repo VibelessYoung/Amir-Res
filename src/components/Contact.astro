@@ -1,5 +1,7 @@
 ---
 import "../styles/style.css";
+import ContactJS from "./ContactJS.astro";
+import ContactReveall from "./ContactReveall.astro";
 ---
 
 <section class="relative z-10 bg-[#0A111A] py-20 flex flex-col">
@@ -156,93 +158,6 @@ import "../styles/style.css";
       </div>
     </div>
   </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      ScrollReveal().reveal(".card", {
-        duration: 1000,
-        origin: "bottom",
-        distance: "20px",
-        easing: "ease-in-out",
-        reset: false,
-      });
-    });
-  </script>
-  <script>
-    import emailjs from "emailjs-com";
-    emailjs.init("Tarw5VCGRr3Tat9Xu");
-
-    const form = document.getElementById("contact-form");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const btn = form.querySelector("button");
-
-      // حالت در حال ارسال
-      btn.innerText = "در حال ارسال...";
-      btn.disabled = true;
-      btn.classList.remove("bg-green-500", "bg-red-500");
-      btn.classList.add(
-        "bg-blue-500",
-        "hover:bg-blue-600",
-        "transition-colors",
-      );
-
-      const params = {
-        name: form.name.value,
-        email: form.email.value,
-        title: form.title.value,
-        message: form.message.value,
-        time: new Date().toLocaleString(),
-      };
-
-      emailjs
-        .send("service_n7xix7t", "template_tlovqg7", params)
-        .then(() => {
-          btn.innerText = "ارسال شد";
-          btn.disabled = false;
-          btn.classList.remove(
-            "bg-blue-500",
-            "hover:bg-blue-600",
-            "bg-red-500",
-          );
-          btn.classList.add("bg-green-500", "hover:bg-green-600");
-
-          setTimeout(() => {
-            btn.classList.remove("bg-green-500", "hover:bg-green-600");
-            btn.classList.add(
-              "bg-gradient-to-tr",
-              "from-purple-600",
-              "to-purple-500",
-              "hover:from-purple-500",
-              "hover:to-purple-600",
-            );
-            btn.innerText = "ارسال پیام";
-          }, 3000);
-          form.reset();
-        })
-        .catch((err) => {
-          console.error(err);
-          btn.innerText = "ارسال ناموفق! دوباره تلاش کن";
-          btn.disabled = false;
-          btn.classList.remove(
-            "bg-blue-500",
-            "hover:bg-blue-600",
-            "bg-green-500",
-            "hover:bg-green-600",
-          );
-          btn.classList.add("bg-red-500", "hover:bg-red-600");
-
-          setTimeout(() => {
-            btn.classList.remove("bg-red-500", "hover:bg-red-600");
-            btn.classList.add(
-              "bg-gradient-to-tr",
-              "from-purple-600",
-              "to-purple-500",
-              "hover:from-purple-500",
-              "hover:to-purple-600",
-            );
-            btn.innerText = "ارسال پیام";
-          }, 3000);
-        });
-    });
-  </script>
+  <ContactReveall client:visible />
+  <ContactJS client:visible />
 </section>
