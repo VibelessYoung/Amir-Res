@@ -1,38 +1,9 @@
----
-
----
-
-<div class="md:hidden fixed top-4 right-5 z-50">
-  <button id="menu-btn" class="text-white text-3xl focus:outline-none"
-    >☰</button
-  >
-</div>
-<div
-  id="overlay"
-  class="fixed inset-0 bg-black/40 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out z-40"
->
-</div>
-<div
-  id="mobile-menu"
-  class="fixed top-0 right-0 h-full w-64 bg-white/10 backdrop-blur-lg border-l border-white/20 flex flex-col items-center justify-center gap-10 text-lg text-white transform translate-x-full transition-transform duration-500 ease-in-out z-50"
->
-  <button
-    id="close-btn"
-    class="self-center text-3xl mb-4 focus:outline-none text-white">✕</button
-  >
-  <a href="#about" class="hover:text-[#8B5CF6] transition">About</a>
-  <a href="#skills" class="hover:text-[#8B5CF6] transition">Skills</a>
-  <a href="#projects" class="hover:text-[#8B5CF6] transition">Projects</a>
-  <a href="#contact" class="hover:text-[#8B5CF6] transition">Contact</a>
-</div>
-
-<script is:inline type="module">
+<script>
   const menuBtn = document.getElementById("menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
   const overlay = document.getElementById("overlay");
   const closeBtn = document.getElementById("close-btn");
   let menuOpen = false;
-
   function openMenu() {
     menuOpen = true;
     mobileMenu.classList.remove("translate-x-full");
@@ -49,13 +20,16 @@
     overlay.classList.remove("opacity-100", "pointer-events-auto");
     menuBtn.textContent = "☰";
   }
-
-  closeBtn.addEventListener("click", closeMenu);
-  menuBtn.addEventListener("click", () =>
-    menuOpen ? closeMenu() : openMenu(),
-  );
+  closeBtn.addEventListener("click", () => {
+    closeMenu();
+  });
+  menuBtn.addEventListener("click", () => {
+    menuOpen ? closeMenu() : openMenu();
+  });
   overlay.addEventListener("click", closeMenu);
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && menuOpen) closeMenu();
+    if (e.key === "Escape" && menuOpen) {
+      closeMenu();
+    }
   });
 </script>

@@ -1,18 +1,18 @@
 ---
-// Header.astro
 import "../styles/style.css";
-import TypingEffect from "./TypingEffect.astro";
 import ScrollRevealIcons from "./ScrollRevealIcons.astro";
 import MobileMenu from "./MobileMenu.astro";
+import Typing from "./Typing.astro";
 ---
 
 <header
-  class="h-screen px-10 pt-4 flex flex-col
-         text-white bg-[url('/images/header.png')] bg-no-repeat bg-cover bg-center relative"
+  class="h-screen px-10 pt-4 flex flex-col text-white bg-[url('/images/header.png')] bg-no-repeat bg-cover bg-center"
 >
-  <div class="absolute inset-0 bg-black/40 backdrop-blur-md z-0"></div>
-  <div class="flex items-start justify-between z-10">
-    <div class="flex items-center gap-2">
+  <div class="absolute inset-0 bg-black/40 backdrop-blur-md z-0 h-screen"></div>
+  <!-- Logo / Brand -->
+  <div class="flex items-start justify-between">
+    <div class="z-10 flex items-center gap-2">
+      <!-- User Icon -->
       <div
         class="flex items-center justify-center w-10 h-10 rounded-full bg-white/20"
       >
@@ -27,40 +27,71 @@ import MobileMenu from "./MobileMenu.astro";
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 
-             1.79-4 4 1.79 4 4 4zm0 2c-3.33 0-6 2.67-6 6h12c0-3.33-2.67-6-6-6z"
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.33 0-6 2.67-6 6h12c0-3.33-2.67-6-6-6z"
           ></path>
         </svg>
       </div>
-      <strong class="text-2xl font-bold tracking-wide">VibelessYoung</strong>
+      <strong class="text-2xl font-bold tracking-wide"> VibelessYoung </strong>
     </div>
+    <!-- Navbar -->
     <nav class="hidden md:flex gap-8 text-lg font-medium">
-      <a href="#about" class="relative group">
-        About
-        <span
+      <a href="#about" class="relative group"
+        >About <span
           class="absolute left-0 -bottom-1 w-0 h-[2px] bg-white group-hover:w-full transition-all duration-300"
         ></span>
       </a>
-      <a href="#skills" class="relative group">
-        Skills
-        <span
+      <a href="#skills" class="relative group"
+        >Skills <span
           class="absolute left-0 -bottom-1 w-0 h-[2px] bg-white group-hover:w-full transition-all duration-300"
         ></span>
       </a>
-      <a href="#projects" class="relative group">
-        Projects
-        <span
+      <a href="#projects" class="relative group"
+        >Projects <span
           class="absolute left-0 -bottom-1 w-0 h-[2px] bg-white group-hover:w-full transition-all duration-300"
         ></span>
       </a>
-      <a href="#contact" class="relative group">
-        Contact
-        <span
+      <a href="#contact" class="relative group"
+        >Contact <span
           class="absolute left-0 -bottom-1 w-0 h-[2px] bg-white group-hover:w-full transition-all duration-300"
         ></span>
       </a>
     </nav>
-    <MobileMenu client:load />
+    <div class="md:hidden fixed top-4 right-5 z-50">
+      <button id="menu-btn" class="text-white text-3xl focus:outline-none">
+        ☰
+      </button>
+    </div>
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black/40 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out z-40"
+    >
+    </div>
+    <div
+      id="mobile-menu"
+      class="fixed top-0 right-0 h-full w-64 bg-white/10 backdrop-blur-lg border-l border-white/20 flex flex-col items-center justify-center gap-10 text-lg text-white transform translate-x-full transition-transform duration-500 ease-in-out z-50"
+    >
+      <button
+        id="close-btn"
+        class="self-center text-3xl mb-4 focus:outline-none text-white"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="w-8 h-8 rounded-full"
+          style="box-shadow: 0px 0px 10px #fff, 0px 0px 30px #fff;"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <a href="#about" class="hover:text-[#8B5CF6] transition">About</a>
+      <a href="#skills" class="hover:text-[#8B5CF6] transition">Skills</a>
+      <a href="#projects" class="hover:text-[#8B5CF6] transition">Projects</a>
+      <a href="#contact" class="hover:text-[#8B5CF6] transition">Contact</a>
+    </div>
   </div>
   <h1
     id="home"
@@ -72,8 +103,62 @@ import MobileMenu from "./MobileMenu.astro";
     class="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none"
   >
     <h1 class="text-3xl sm:text-6xl font-semibold text-center">
-      <TypingEffect client:visible />
+      <span class="typing-effect"></span>
+      <span class="typing-cursor">|</span>
     </h1>
+  </div>
+  <div
+    class="icons-social flex justify-center items-center gap-10 absolute inset-0 z-10 top-7/12"
+  >
+    <a href="https://t.me/vibelessyoung" target="_blank">
+      <div
+        class="w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center transition-transform transform hover:scale-110 hover:shadow-xl hover:shadow-blue-400/50 cursor-pointer"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-12 h-12 text-blue-500 transition-all duration-300 hover:text-blue-400"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M22 2L2 12l7 3 3 7L22 2z"></path>
+        </svg>
+      </div>
+    </a>
+    <a href="https://github.com/vibelessyoung" target="_blank">
+      <div
+        class="w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center transition-transform transform hover:scale-110 hover:shadow-xl hover:shadow-gray-500/50 cursor-pointer"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-12 h-12 text-gray-700 transition-all duration-300 hover:text-gray-600"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 0C5.372 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.26.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.838 1.236 1.838 1.236 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.932 0-1.31.469-2.382 1.236-3.222-.123-.304-.536-1.527.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.296-1.23 3.296-1.23.655 1.649.242 2.872.119 3.176.77.84 1.234 1.912 1.234 3.222 0 4.61-2.807 5.625-5.479 5.921.43.37.814 1.102.814 2.222v3.293c0 .319.218.694.825.576C20.565 21.796 24 17.303 24 12c0-6.627-5.373-12-12-12z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </div>
+    </a>
+    <a href="mailto:vibelessyoung@gmail.com">
+      <div
+        class="w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center transition-transform transform hover:scale-110 hover:shadow-xl hover:shadow-red-500/50 cursor-pointer"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-12 h-12 text-red-500 transition-all duration-300 hover:text-red-400"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 13.065l-11-6.065v12h22v-12l-11 6.065zm11-8.065h-22l11 6.065 11-6.065z"
+          ></path>
+        </svg>
+      </div>
+    </a>
   </div>
   <ScrollRevealIcons client:visible />
 </header>
+<Typing client:visible />
+<MobileMenu clien:visiblev />

@@ -1,24 +1,17 @@
----
-
----
-
-<span class="typing-effect"></span>
 <script is:inline type="module">
   const element = document.querySelector(".typing-effect");
-  const texts = [
-    "Programmer",
-    "WebDesigner",
-    "Front-End Developer",
-    "Become a FullStack Developer",
-  ];
+  const texts = ["Programmer", "WebDesigner", "Front-End Developer"];
   let index = 0,
     charIndex = 0,
     deleting = false;
 
   function type() {
     const text = texts[index];
-    if (deleting) element.textContent = text.substring(0, charIndex--);
-    else element.textContent = text.substring(0, charIndex++);
+    if (deleting) {
+      element.textContent = text.substring(0, charIndex--);
+    } else {
+      element.textContent = text.substring(0, charIndex++);
+    }
 
     let speed = 150;
     if (deleting) speed /= 2;
