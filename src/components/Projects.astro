@@ -5,6 +5,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SwiperProjects from "./SwiperProjects.astro";
 import ProjectsReveall from "./ProjectsReveall.astro";
+import { projects } from "../data/projects";
+import ProjectCard from "./ProjectCard.astro";
 ---
 
 <section id="projects" class="relative z-10 py-30 flex flex-col bg-[#0A111A]">
@@ -44,131 +46,13 @@ import ProjectsReveall from "./ProjectsReveall.astro";
       <div class="sm:col-span-2 px-3 sm:px-0">
         <div class="swiper MySwiper rounded-2xl overflow-hidden w-full">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div
-                class="h-auto flex flex-col gap-4 bg-[#1F242C] rounded-2xl shadow-2xl overflow-hidden group"
-              >
-                <img
-                  src="/images/twitter.jpg"
-                  alt="twitter"
-                  class="w-full h-44 object-cover"
-                  loading="lazy"
-                />
-                <h1 class="text-center text-gray-300 font-black text-2xl mt-3">
-                  Twitter
-                </h1>
-                <p
-                  dir="rtl"
-                  class="text-center text-gray-300 text-sm mt-2 px-3"
-                >
-                  شبیه سازی سایت تویتر با ای پی آی همراه قابلیت لود دیتا و ارسال
-                  نظر و فیلتر نظرات همراه هشتگ ها.
-                </p>
-                <a
-                  href="https://twitter-web-clone-dusky.vercel.app/"
-                  target="_blank"
-                >
-                  <button
-                    class="cursor-pointer mb-3 flex items-center justify-center gap-2 px-4 py-2 mt-auto mx-auto bg-[#8B5CF6] hover:bg-purple-800 rounded-lg text-sm border-0 transition-colors"
-                  >
-                    مشاهده
-                  </button></a
-                >
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div
-                class="h-auto flex flex-col gap-4 bg-[#1F242C] rounded-2xl shadow-2xl overflow-hidden group"
-              >
-                <img
-                  src="/images/text.jpg"
-                  alt="text"
-                  class="w-full h-44 object-cover"
-                  loading="lazy"
-                />
-                <h1 class="text-center text-gray-300 text-2xl font-black mt-3">
-                  OCR-Extractor
-                </h1>
-                <p
-                  dir="rtl"
-                  class="text-center text-gray-300 text-sm mt-2 px-3"
-                >
-                  یک وبسایت ساده ولی مدرن برای آپلود تصاویر و استخراج متن از
-                  آنها به سادگی.
-                </p>
-                <a
-                  href="https://ocr-extractor-web-page.vercel.app/"
-                  target="_blank"
-                >
-                  <button
-                    class="cursor-pointer mb-3 flex items-center justify-center gap-2 px-4 py-2 mt-auto mx-auto bg-[#8B5CF6] hover:bg-purple-800 rounded-lg text-sm border-0 transition-colors"
-                  >
-                    مشاهده
-                  </button></a
-                >
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div
-                class="h-auto flex flex-col gap-4 bg-[#1F242C] rounded-2xl shadow-2xl overflow-hidden group"
-              >
-                <img
-                  src="/images/scarlet.jpg"
-                  alt="scarlet-nexus"
-                  class="w-full h-44 object-cover"
-                  loading="lazy"
-                />
-                <h1 class="text-center text-gray-300 text-2xl font-black mt-3">
-                  Saturn-Anime
-                </h1>
-                <p
-                  dir="rtl"
-                  class="text-center text-gray-300 text-sm mt-2 px-3"
-                >
-                  یک وبسایت انیمه که در آن با کمک ای پی آی انیمه ها لود و میتوان
-                  اطلاعات آ نها رو دید.
-                </p>
-                <a href="https://saturn-anime.vercel.app/" target="_blank">
-                  <button
-                    class="cursor-pointer mb-3 flex items-center justify-center gap-2 px-4 py-2 mt-auto mx-auto bg-[#8B5CF6] hover:bg-purple-800 rounded-lg text-sm border-0 transition-colors"
-                  >
-                    مشاهده
-                  </button></a
-                >
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div
-                class="h-auto flex flex-col gap-4 bg-[#1F242C] rounded-2xl shadow-2xl overflow-hidden group"
-              >
-                <img
-                  src="/images/search.jpg"
-                  alt="search"
-                  class="w-full h-44 object-cover"
-                  loading="lazy"
-                />
-                <h1 class="text-center text-gray-300 text-2xl font-black mt-3">
-                  JobRemote
-                </h1>
-                <p
-                  dir="rtl"
-                  class="text-center text-gray-300 text-sm mt-2 px-3"
-                >
-                  یک وبسایت پیدا کردن شغل همراه ای پی آی که قابلیت های سرچ و. .
-                  . داره.
-                </p>
-                <a
-                  href="https://jobs-remot-web-page.vercel.app/"
-                  target="_blank"
-                >
-                  <button
-                    class="cursor-pointer mb-3 flex items-center justify-center gap-2 px-4 py-2 mt-auto mx-auto bg-[#8B5CF6] hover:bg-purple-800 rounded-lg text-sm border-0 transition-colors"
-                  >
-                    مشاهده
-                  </button></a
-                >
-              </div>
-            </div>
+            {
+              projects.map((project) => (
+                <div class="swiper-slide">
+                  <ProjectCard {...project} />
+                </div>
+              ))
+            }
           </div>
           <div class="swiper-pagination"></div>
           <div class="swiper-button-next custom-swiper-btn cursor-pointer">
